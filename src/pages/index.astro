@@ -11,8 +11,8 @@ import { Image } from '@astrojs/image/components'
 
 const posts = (await Astro.glob('./posts/*.md')).sort(
   (a: any, b: any) =>
-    new Date(b.frontmatter.createdAt).valueOf() -
-    new Date(a.frontmatter.createdAt).valueOf()
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 )
 ---
 
@@ -42,13 +42,15 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
               posts.map(post => (
                 <li class="text-center mb-4">
                   <a href={post.url}>
+                    {console.log(post.frontmatter.heroImage)}
                     <Image
                       class="border border-slate-300 dark:border-zinc-700 rounded-xl"
                       src={post.frontmatter.heroImage}
-                      width={720 * 2}
+                      width={720}
                       aspectRatio={2.0}
                       alt="Thumbnail"
                     />
+
                     <div class="mt-3 text-xl font-bold">
                       {post.frontmatter.title}
                     </div>
@@ -63,7 +65,6 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
             }
           </ul>
         </section>
-        <!-- <CreatedWithSection /> -->
       </Content>
     </main>
     <Footer />
