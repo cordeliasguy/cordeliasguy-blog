@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: Test Post
-description: Post description
+title: Test Post 3
+description: Post description 3
 pubDate: 10/31/2022
 image: /posts/test.webp
 ---

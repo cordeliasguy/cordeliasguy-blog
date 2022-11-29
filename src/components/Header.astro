@@ -2,7 +2,7 @@
 import HeaderLink from './HeaderLink.astro'
 import { HOMEPAGE_URL } from '../config'
 import { IoLogoGithub } from 'react-icons/io5/index.js'
-import BookFillIcon from './icons/book-fill'
+import DemonIcon from './icons/demon'
 import ThemeToggle from './ThemeToggleButton'
 ---
 
@@ -11,12 +11,12 @@ import ThemeToggle from './ThemeToggleButton'
     <nav class="flex items-center gap-3 text-base">
       <a href="/" class="group">
         <h2 class="font-semibold tracking-tighter p-2 font-mplus text-lg">
-          <BookFillIcon /> Daniel A. Caballero
+          <DemonIcon /> Daniel A. Caballero
         </h2>
         <div class="items-center gap-6 hidden md:flex">
           <HeaderLink href={HOMEPAGE_URL}>About</HeaderLink>
           <HeaderLink
-            href="https://github.com/craftzdog/craftzdog-uses"
+            href="https://github.com/cordeliasguy/cordeliasguy-blog"
             target="_blank"><IoLogoGithub />Source</HeaderLink
           >
         </div>

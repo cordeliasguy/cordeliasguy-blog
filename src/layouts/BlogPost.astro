@@ -4,24 +4,25 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
+import { IoArrowBack } from 'react-icons/io5'
 
 export interface Props {
   content: {
     title: string
     description: string
-    heroImage?: string
+    image?: string
   }
 }
 
 const {
-  content: { title, description, heroImage }
+  content: { title, description, image }
 } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={heroImage} />
+    <BaseHead title={title} description={description} image={image} />
   </head>
 
   <Body>
@@ -30,12 +31,12 @@ const {
       <Content className="pt-6">
         <div class="mb-8">
           {
-            heroImage && (
+            image && (
               <img
                 class="border border-slate-300 dark:border-zinc-700 rounded-xl"
                 width={720}
                 height={360}
-                src={heroImage}
+                src={image}
                 alt=""
               />
             )
@@ -48,8 +49,13 @@ const {
         <span
           class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
         ></span>
-        <div class="flex flex-row justify-between mt-16 text-lg">
-          <a href="/" class="dark:text-blue-400 text-blue-600">Back to posts</a>
+        <div class="flex mt-16 text-xl font-mplus">
+          <a
+            href="/"
+            class="text-orange-500 underline underline-offset-2 flex items-center gap-1 hover:text-zinc-900 dark:hover:text-zinc-300 hover:no-underline"
+          >
+            <IoArrowBack /> Back to posts</a
+          >
         </div>
       </Content>
     </main>
